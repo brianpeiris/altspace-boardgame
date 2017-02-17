@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>Space Wars VR</title>
+		<script src="http://livejs.com/live.js"></script>
+		<script src="aframe.min.js"></script>
+		<script src="aframe-altspace-component.js"></script>
+		<script src="altspace.min.js"></script>
+	</head>
+	<body>
+		<a-scene altspace="verticalAlign: bottom">
+			<a-assets timeout="10000">
+				<a-asset-item id="table-obj" src="cattable.obj"></a-asset-item>
+				<a-asset-item id="table-mtl" src="cattable.mtl"></a-asset-item>
+			</a-assets>
+
+			<a-entity 
+				position="0 360 10" scale="1.8 1.8 1.8" 
+				obj-model="obj: #table-obj; mtl: #table-mtl" id="table-a" 
+				n-mesh-collider="type:environment;">
+			</a-entity>
+		</a-scene>
+	</body>
+</html>
