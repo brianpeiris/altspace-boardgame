@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <style>
+    html, body { width: 100%; height: 100%; }
+    body { 
+	  margin: 0; padding: 0; 
+	  display: flex; align-items: center; justify-content: center;
+	  font: bold 40pt sans-serif; 
+	}
+  </style>
+</head>
+<body>
+  <script>
+    var span = document.createElement('span');
+    span.textContent = location.search.substr(4);
+    document.body.appendChild(span);
+  </script>
+</body>
+</html>
