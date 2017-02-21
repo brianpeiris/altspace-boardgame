@@ -9,13 +9,29 @@
 	  display: flex; align-items: center; justify-content: center;
 	  font: bold 40pt sans-serif; 
 	}
+	iframe {
+	  border: none;
+	  width: 100%;
+	  height: 100%;
+	}
   </style>
 </head>
 <body>
+  <iframe id="content"></iframe>
   <script>
-    var span = document.createElement('span');
-    span.textContent = location.search.substr(4);
-    document.body.appendChild(span);
+    var id = location.search.substr(4);
+	var idToUrlMap = new Map([
+	  ['dm-left', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=1735539075'],
+	  ['dm-center', 'http://basicfantasy.org/introstory.html#maincontentbox'],
+	  ['dm-right', 'http://basicfantasy.org/roller.html#maincontentbox'],
+	  ['player-1', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=1735539075'],
+	  ['player-2', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=605716688'],
+	  ['player-3', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=162021162'],
+	  ['player-4', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=1600556340'],
+	  ['player-5', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=308585713'],
+	  ['player-6', 'https://docs.google.com/spreadsheets/d/1xFs2QKh1w1F278ODsSOnw3PhdNCbwlYGjqHDfGNIyrU/edit#gid=1511552395'],
+	]);
+	document.getElementById('content').src = idToUrlMap.get(id);
   </script>
 </body>
 </html>
